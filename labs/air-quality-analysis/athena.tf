@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "csa-p-athena-test" {
   bucket = "csa-p-athena-test"
   tags = "${local.common_tags}"
+  force_destroy = true
 }
 
 resource "aws_athena_database" "csa-p-athena-test" {

@@ -29,6 +29,29 @@ resource "aws_s3_bucket" "hypocrisy-io" {
     index_document = "index.html"
   }
   tags = "${local.common_tags}"
+  policy = <<POLICY
+{
+  "Version": "2008-10-17",
+  "Id": "http better policy",
+  "Statement": [
+    {
+      "Sid": "readonly policy",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::hypocrisy.io/*"
+    }
+  ]
+}
+POLICY
+}
+
+resource "aws_s3_bucket_public_access_block" "hypocrisy-io" {
+  bucket = "${aws_s3_bucket.hypocrisy-io.bucket}"
+  block_public_acls = true
+  ignore_public_acls = true
+  block_public_policy = false
+  restrict_public_buckets = false
 }
 
 resource "aws_route53_zone" "devmo-io-public" {

@@ -20,7 +20,7 @@ For the terraform, install it
 I also have `awscli` (apt-get).
 
 NOTE
-	I couldn't get terraform to read the credentail file.
+	I couldn't get terraform to read the credential file.
 	The documentation for it seems to be... well... incorrect.
 	Anyways, I ended up setting the environment variables,
 	which seems to do the trick...
@@ -30,3 +30,9 @@ NOTE
 I want to store my state remotely to avoid all sorts of problems.
   I chose S3 as it seems to be the easiest to set up.  I need
   a bucket, which can either be created manually or terraformed.
+
+I chose to terraform the state bucket and commit the terraform state
+  to git --- it doesn't seem contain any secrets.  This construct
+  resides in the `bootstrap` directory.  The rest of the stuff
+  uses the bucket to store state.
+

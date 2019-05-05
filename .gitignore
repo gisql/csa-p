@@ -1,2 +1,6 @@
 **/*.backup
 **/.terraform
+.idea/**
+.idea
+*.iws
+*.ipr

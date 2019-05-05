@@ -1,0 +1,29 @@
+{
+  "date": {
+    "utc": "2013-11-27T09:00:00.000Z",
+    "local": "2013-11-27T17:00:00+08:00"
+  },
+  "parameter": "pm25",
+  "location": "SPARTAN - Tsinghua University",
+  "value": 20.7,
+  "unit": "µg/m³",
+  "city": "Beijing",
+  "attribution": [
+    {
+      "name": "SPARTAN Network",
+      "url": "http://www.spartan-network.org/"
+    }
+  ],
+  "averagingPeriod": {
+    "value": 1,
+    "unit": "hours"
+  },
+  "coordinates": {
+    "latitude": 40.01,
+    "longitude": 116.333
+  },
+  "country": "CN",
+  "sourceName": "Spartan",
+  "sourceType": "research",
+  "mobile": false
+}
